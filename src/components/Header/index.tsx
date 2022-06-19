@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import stitches from "../../stitches";
-import bauhausLogo from "../../assets/bauhaus-extended-logo.svg";
+import bauhausLogo from "../../assets/header/bauhaus-extended-logo.svg";
 import { faLocationDot, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import SearchBar from "./SearchBar";

@@ -42,7 +42,7 @@ const CategoryCardsList: FC = () => {
       {categories.map((category) => {
         if (category.isPopular) {
           return (
-            <CategoryCard key={category.id} image={require(`../../assets/${category.imageName}`)}>
+            <CategoryCard key={category.id} image={require(`../../assets/categories/${category.imageName}`)}>
               {category.name}
             </CategoryCard>
           );

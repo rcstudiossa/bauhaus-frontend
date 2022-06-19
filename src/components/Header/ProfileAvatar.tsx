@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import stitches from "../../stitches";
-import avatar from "../../assets/avatar.png";
+import avatar from "../../assets/header/avatar.png";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

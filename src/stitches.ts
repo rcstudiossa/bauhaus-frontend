@@ -33,14 +33,14 @@ const stitches = createStitches({
     },
 
     fontSizes: {
-      font_xxsmall: "0.422rem",
-      font_xsmall: "0.563rem",
-      font_small: "0.75rem",
-      font_regular: "1rem",
-      font_medium: "1.33rem",
-      font_large: "1.77rem",
-      font_xlarge: "2.369rem",
-      font_xxlarge: "3.157rem",
+      font_xxsmall: "0.422em",
+      font_xsmall: "0.563em",
+      font_small: "0.75em",
+      font_regular: "1em",
+      font_medium: "1.33em",
+      font_large: "1.77em",
+      font_xlarge: "2.369em",
+      font_xxlarge: "3.157em",
     },
   },
 });
