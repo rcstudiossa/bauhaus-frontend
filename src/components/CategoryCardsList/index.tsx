@@ -8,13 +8,34 @@ const { styled } = stitches;
 const CategoryCardsContainer: FC<{ children: ReactNode }> = styled("div", {
   flex: 1,
   display: "flex",
-  alignItems: "center",
+  margin: "0 -1.77rem",
+  overflowX: "auto",
+  padding: "0 $large $small $large",
+
+  gridGap: "$regular",
+  gridTemplateRows: "1fr",
+
+  "&::-webkit-scrollbar": {
+    height: "0.65rem !important",
+  },
+  "&::-webkit-scrollbar-track": {
+    background: "$grey_800",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    background: "$grey_600",
+    borderRadius: "0.375rem !important",
+    "-webkit-box-shadow": "inset 0 0 8px rgba(0,0,0,0.025)",
+    left: "-100px",
+    marginLeft: "2rem",
+  },
+  "&::-webkit-scrollbar-thumb:hover": {
+    background: "$grey_400",
+  },
 });
 
 const CategoryCardBase: FC<{ children: ReactNode; css: any }> = styled("div", {
-  position: "relative",
   width: "16rem",
-  minWidth: "12rem",
+  minWidth: "16rem",
   height: "22rem",
   borderRadius: "1rem",
 
@@ -23,7 +44,7 @@ const CategoryCardBase: FC<{ children: ReactNode; css: any }> = styled("div", {
   fontWeight: 500,
   color: "$grey_100",
   lineHeight: "2.5rem",
-  marginRight: "$large",
+  cursor: "pointer",
 
   backgroundColor: "$grey_700",
   backgroundSize: "cover",

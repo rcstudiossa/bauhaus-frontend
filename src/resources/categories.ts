@@ -8,10 +8,15 @@ const categories = [
     imageName: "electrical_lights_img.png",
     isPopular: true,
   },
-  { id: "decoration", name: "Decoration", isPopular: false },
+  { id: "home_decoration", name: "Home & Decoration", imageName: "home_decoration_img.png", isPopular: true },
   { id: "doors_windows_stairs", name: "Doors, Windows & Stairs", isPopular: false },
   { id: "building_materials", name: "Building Materials", isPopular: false },
-  { id: "nautic_cars_bikes", name: "Nautic, Cars & Bikes", isPopular: false },
+  {
+    id: "boats_cars_bikes",
+    name: "Boats, Cars & Bikes",
+    imageName: "boats_cars_bikes_img.png",
+    isPopular: true,
+  },
 ];
 
 export default categories;

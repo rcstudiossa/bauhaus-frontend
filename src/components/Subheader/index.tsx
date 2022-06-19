@@ -21,7 +21,7 @@ const CategoriesContainer: FC<{ children: ReactNode }> = styled("div", {
 });
 
 const CategoryText: FC<{ children: ReactNode }> = styled("p", {
-  fontSize: "0.66em",
+  fontSize: "$font_small",
   color: "$grey_200",
   margin: "0 $regular 0 0",
 });

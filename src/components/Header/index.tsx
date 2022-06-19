@@ -17,7 +17,7 @@ const HeaderContainer: FC<{ children: ReactNode }> = styled("div", {
   display: "flex",
   alignItems: "center",
   background: "$background",
-  height: "3.5rem",
+  height: "3.75rem",
   padding: "0 $large 0 $large",
 });
 

@@ -23,17 +23,17 @@ const InputText: FC<{ placeholder: string | undefined }> = styled("input", {
   backgroundColor: "transparent",
   outline: "none",
   color: "grey.100",
-  fontSize: "$font_regular",
+  fontSize: "0.85em",
   caretColor: "$grey_300",
   "&::placeholder": {
-    color: "$grey_400",
+    color: "$grey_300",
   },
 });
 
 const SearchBar: FC = () => {
   return (
     <SearchContainer>
-      <FontAwesomeIcon icon={faSearch} size="sm" color={stitches.theme.colors.grey_400.value} />
+      <FontAwesomeIcon icon={faSearch} size="sm" color={stitches.theme.colors.grey_300.value} />
       <InputText placeholder={"Search for anything..."} />
     </SearchContainer>
   );
