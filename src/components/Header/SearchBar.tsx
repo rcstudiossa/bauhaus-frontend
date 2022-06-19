@@ -8,7 +8,7 @@ const { styled } = stitches;
 const SearchContainer: FC<{ children: ReactNode }> = styled("div", {
   flex: 1,
   display: "flex",
-  height: "2.25rem",
+  height: "2rem",
   margin: "0 $large 0 $large",
   backgroundColor: "$grey_700",
   borderRadius: "0.125rem",

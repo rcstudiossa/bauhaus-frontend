@@ -1,7 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import stitches from "../../stitches";
 import bauhausLogo from "../../assets/bauhaus-extended-logo.svg";
-import avatar from "../../assets/avatar.png";
 import { faLocationDot, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import SearchBar from "./SearchBar";
@@ -14,13 +13,7 @@ const Logo: FC<{ src: string | undefined }> = styled("img", {
   height: "2rem",
 });
 
-const Avatar: FC<{ src: string | undefined }> = styled("img", {
-  height: "2rem",
-  borderRadius: "1rem",
-});
-
 const HeaderContainer: FC<{ children: ReactNode }> = styled("div", {
-  flex: 1,
   display: "flex",
   alignItems: "center",
   background: "$background",

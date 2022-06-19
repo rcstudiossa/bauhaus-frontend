@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import stitches from "../../stitches";
-import type * as Stitches from "@stitches/react";
+
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
