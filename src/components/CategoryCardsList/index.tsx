@@ -6,7 +6,7 @@ import categories from "../../resources/categories";
 
 const { styled } = stitches;
 
-const CategoryCardsContainer: FC<{ children: ReactNode; onClick: any }> = styled("div", {
+const CategoryCardsContainer: FC<{ children: ReactNode }> = styled("div", {
   flex: 1,
   display: "flex",
   margin: "0 -1.77rem",
@@ -34,7 +34,7 @@ const CategoryCardsContainer: FC<{ children: ReactNode; onClick: any }> = styled
   },
 });
 
-const CategoryCardBase: FC<{ children: ReactNode; css: any }> = styled("div", {
+const CategoryCardBase: FC<{ children: ReactNode; css: any; onClick: any }> = styled("div", {
   width: "16rem",
   minWidth: "16rem",
   height: "22rem",
@@ -48,23 +48,36 @@ const CategoryCardBase: FC<{ children: ReactNode; css: any }> = styled("div", {
   cursor: "pointer",
 
   backgroundColor: "$grey_700",
-  backgroundSize: "cover",
+  backgroundSize: "100%",
   backgroundPositionX: "center",
   backgroundPositionY: "center",
   backgroundRepeat: "no-repeat",
+
+  "&:hover": {
+    backgroundSize: "120%",
+    backgroundPositionX: "right",
+    backgroundPositionY: "bottom",
+    transform: "scale(0.99)",
+  },
+
+  transition: "background-size .2s, background-position .4s, transform .2s",
 });
 
-const CategoryCard: FC<{ image: HTMLImageElement; children: ReactNode }> = (props) => (
-  <CategoryCardBase css={{ backgroundImage: `url(${props.image})` }}>{props.children}</CategoryCardBase>
-);
-
-const CategoryCardsList: FC = () => {
+const CategoryCard: FC<{ image: HTMLImageElement; children: ReactNode }> = (props) => {
   const navigate = useNavigate();
   const goToProducts = () => {
     navigate("products");
   };
   return (
-    <CategoryCardsContainer onClick={goToProducts}>
+    <CategoryCardBase css={{ backgroundImage: `url(${props.image})` }} onClick={goToProducts}>
+      {props.children}
+    </CategoryCardBase>
+  );
+};
+
+const CategoryCardsList: FC = () => {
+  return (
+    <CategoryCardsContainer>
       {categories.map((category) => {
         if (category.isPopular) {
           return (

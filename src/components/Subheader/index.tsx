@@ -25,6 +25,11 @@ const CategoryText: FC<{ children: ReactNode }> = styled("p", {
   color: "$grey_200",
   margin: "0 $regular 0 0",
   whiteSpace: "nowrap",
+  cursor: "pointer",
+  "&:hover": {
+    textDecoration: "underline",
+    fontWeight: 500,
+  },
 });
 
 const BannerContainer: FC<{ children: ReactNode }> = styled("div", {
@@ -34,6 +39,7 @@ const BannerContainer: FC<{ children: ReactNode }> = styled("div", {
   padding: "0 $regular 0 $regular",
   alignItems: "center",
   whiteSpace: "nowrap",
+  cursor: "pointer",
 });
 
 const BannerText: FC<{ children: ReactNode }> = styled("p", {
@@ -43,6 +49,9 @@ const BannerText: FC<{ children: ReactNode }> = styled("p", {
   fontWeight: 600,
   textTransform: "uppercase",
   fontStyle: "italic",
+  "&:hover": {
+    textDecoration: "underline",
+  },
 });
 
 const Subheader: FC = () => {

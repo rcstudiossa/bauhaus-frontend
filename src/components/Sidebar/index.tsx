@@ -43,6 +43,7 @@ const FiltersHeaderFooterOption: FC<{ children: ReactNode }> = styled("p", {
   color: "$primary",
   fontWeight: 500,
   margin: "0",
+  cursor: "pointer",
 });
 
 const FilterContent: FC<{ children: ReactNode }> = styled("div", {
@@ -73,6 +74,7 @@ const FilterOptionLabel: FC<{ children: ReactNode }> = styled("label", {
   alignItems: "center",
   gridTemplateColumns: "1em auto",
   gap: "0.5em",
+  cursor: "pointer",
 });
 
 const ProductsPage: FC = () => {

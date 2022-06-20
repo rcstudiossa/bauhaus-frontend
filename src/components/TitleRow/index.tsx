@@ -3,10 +3,17 @@ import stitches from "../../stitches";
 
 const { styled } = stitches;
 
-const TitleRowContainer: FC<{ children: ReactNode }> = styled("div", {
+const TitleRowContainer: FC<{ children: ReactNode; fontSize?: any }> = styled("div", {
   display: "flex",
   alignItems: "center",
-  margin: "$regular 0",
+  margin: "$large 0 $regular 0",
+  variants: {
+    fontSize: {
+      large: {
+        margin: "$regular 0",
+      },
+    },
+  },
 });
 
 const Title: FC<{ children: ReactNode; fontSize?: any }> = styled("p", {
@@ -32,6 +39,10 @@ const SeeAll: FC<{ children: ReactNode }> = styled("p", {
   color: "$grey_300",
   textDecoration: "underline",
   margin: "0",
+  cursor: "pointer",
+  "&:hover": {
+    fontWeight: 500,
+  },
 });
 
 interface TitleRowProps {
@@ -42,7 +53,7 @@ interface TitleRowProps {
 
 const TitleRow: FC<TitleRowProps> = ({ fontSize, seeAll, children }) => {
   return (
-    <TitleRowContainer>
+    <TitleRowContainer fontSize={fontSize}>
       <Title fontSize={fontSize}>{children}</Title>
       {seeAll ? <SeeAll>See All</SeeAll> : <div />}
     </TitleRowContainer>

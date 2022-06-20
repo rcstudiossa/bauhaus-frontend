@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useEffect, useState } from "react";
 import stitches from "../../stitches";
 
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const { styled } = stitches;
 
-const CardContainer: FC<{ children: ReactNode }> = styled("div", {
+const CardContainer: FC<{ children: ReactNode; onMouseEnter: any; onMouseLeave: any }> = styled("div", {
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   marginRight: "$large",
+  cursor: "pointer",
 });
 
 const IconCircle: FC<{ children: ReactNode }> = styled("div", {
@@ -65,10 +66,19 @@ interface HeaderCardProps {
 }
 
 const HeaderCard: FC<HeaderCardProps> = (props) => {
+  const [iconColor, setIconColor] = useState(stitches.theme.colors.grey_300.value);
+
   return (
-    <CardContainer>
+    <CardContainer
+      onMouseEnter={() => {
+        setIconColor(stitches.theme.colors.grey_100.value);
+      }}
+      onMouseLeave={() => {
+        setIconColor(stitches.theme.colors.grey_300.value);
+      }}
+    >
       <IconCircle>
-        <FontAwesomeIcon icon={props.icon} color={stitches.theme.colors.grey_300.value} />
+        <FontAwesomeIcon icon={props.icon} color={iconColor} />
       </IconCircle>
       <TextContainer>
         <Text type="title">{props.title}</Text>

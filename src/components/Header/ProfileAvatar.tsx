@@ -9,6 +9,7 @@ const { styled } = stitches;
 const ProfileAvatarContainer: FC<{ children: ReactNode }> = styled("div", {
   display: "flex",
   alignItems: "center",
+  cursor: "pointer",
 });
 
 const Avatar: FC<{ src: string | undefined }> = styled("img", {

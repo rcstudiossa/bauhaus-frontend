@@ -62,6 +62,12 @@ const ProductCardContainer: FC<{ children: ReactNode; arrangement: any }> = styl
 
   boxShadow: "0px 0.25rem 0.5rem rgba(0, 0, 0, 0.05)",
 
+  "&:hover": {
+    transform: "scale(0.99)",
+    boxShadow: "0px 0.1rem 0.5rem rgba(0, 0, 0, 0.08)",
+  },
+  transition: "transform .2s, box-shadow .2s",
+
   variants: {
     arrangement: {
       horizontalList: {
