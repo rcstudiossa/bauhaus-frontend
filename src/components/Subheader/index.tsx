@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useState, useLayoutEffect, useEffect } from "react";
 import stitches from "../../stitches";
 
 import categories from "../../resources/categories";
@@ -54,12 +54,34 @@ const BannerText: FC<{ children: ReactNode }> = styled("p", {
   },
 });
 
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return windowSize;
+};
+
 const Subheader: FC = () => {
+  const [windowWidth, windowHeight] = useWindowSize();
+  const [maxIndex, setMaxIndex] = useState(0);
+
+  useEffect(() => {
+    setMaxIndex((windowWidth - 100) / 175);
+  }, [windowWidth, windowHeight]);
+
   return (
     <SubheaderContainer>
       <CategoriesContainer>
-        {categories.map(({ id, name }) => {
-          return <CategoryText key={id}>{name}</CategoryText>;
+        {categories.map(({ id, name }, index) => {
+          if (index < maxIndex) {
+            return <CategoryText key={id}>{name}</CategoryText>;
+          }
         })}
       </CategoriesContainer>
       <BannerContainer>

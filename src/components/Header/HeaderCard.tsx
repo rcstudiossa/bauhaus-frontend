@@ -71,7 +71,7 @@ const HeaderCard: FC<HeaderCardProps> = (props) => {
   return (
     <CardContainer
       onMouseEnter={() => {
-        setIconColor(stitches.theme.colors.grey_100.value);
+        setIconColor(stitches.theme.colors.grey_200.value);
       }}
       onMouseLeave={() => {
         setIconColor(stitches.theme.colors.grey_300.value);
