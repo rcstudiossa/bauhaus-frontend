@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from "react";
+import { motion } from "framer-motion";
 
 import stitches from "../../stitches";
 import Header from "../../components/Header";
@@ -48,22 +49,34 @@ const ProductsPage: FC = () => {
     <Container>
       <Header />
       <Subheader />
-      <ContentContainer>
-        <Sidebar />
-        <Content>
-          <NavigationHistoryContainer>
-            <NavigationHistory src={navigationHistory} />
-          </NavigationHistoryContainer>
-          <TitleRow fontSize="large" seeAll>
-            Lawn mowers
-          </TitleRow>
-          <ProductCardsList categoryId="lawn_mowers" arrangement="horizontalList" />
-          <TitleRow fontSize="large" seeAll>
-            Furniture
-          </TitleRow>
-          <ProductCardsList categoryId="garden_furniture" arrangement="horizontalList" />
-        </Content>
-      </ContentContainer>
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.4,
+            ease: [0.61, 1, 0.88, 1],
+          },
+        }}
+      >
+        <ContentContainer>
+          <Sidebar />
+          <Content>
+            <NavigationHistoryContainer>
+              <NavigationHistory src={navigationHistory} />
+            </NavigationHistoryContainer>
+            <TitleRow fontSize="large" seeAll>
+              Lawn mowers
+            </TitleRow>
+            <ProductCardsList categoryId="lawn_mowers" arrangement="horizontalList" />
+            <TitleRow fontSize="large" seeAll>
+              Furniture
+            </TitleRow>
+            <ProductCardsList categoryId="garden_furniture" arrangement="horizontalList" />
+          </Content>
+        </ContentContainer>
+      </motion.div>
     </Container>
   );
 };

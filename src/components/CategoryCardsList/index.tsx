@@ -12,6 +12,7 @@ const CategoryCardsContainer: FC<{ children: ReactNode }> = styled("div", {
   margin: "0 -1.77rem",
   overflowX: "auto",
   padding: "0 $large $small $large",
+  minHeight: "23.75rem",
 
   gridGap: "$regular",
   gridTemplateRows: "1fr",
