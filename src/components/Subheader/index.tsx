@@ -24,6 +24,7 @@ const CategoryText: FC<{ children: ReactNode }> = styled("p", {
   fontSize: "$font_small",
   color: "$grey_200",
   margin: "0 $regular 0 0",
+  whiteSpace: "nowrap",
 });
 
 const BannerContainer: FC<{ children: ReactNode }> = styled("div", {
@@ -32,6 +33,7 @@ const BannerContainer: FC<{ children: ReactNode }> = styled("div", {
   margin: "0 0 0 $regular",
   padding: "0 $regular 0 $regular",
   alignItems: "center",
+  whiteSpace: "nowrap",
 });
 
 const BannerText: FC<{ children: ReactNode }> = styled("p", {

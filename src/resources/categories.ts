@@ -1,6 +1,21 @@
 const categories = [
   { id: "tools_machines", name: "Tools & Machines", imageName: "tools_machines_img.png", isPopular: true },
-  { id: "garden", name: "Garden", imageName: "garden_img.png", isPopular: true },
+  {
+    id: "garden",
+    name: "Garden",
+    imageName: "garden_img.png",
+    isPopular: true,
+    subCategories: [
+      { id: "garden_furniture", name: "Garden furniture" },
+      { id: "grills", name: "Grills" },
+      { id: "pools", name: "Pools" },
+      { id: "garden_machinery_tools", name: "Garden machinery & tools" },
+      { id: "carports", name: "Carports" },
+      { id: "fences_screens", name: "Fences & screens" },
+      { id: "landscaping", name: "Landscaping" },
+      { id: "camping_supplies", name: "Camping supplies" },
+    ],
+  },
   { id: "kitchen", name: "Kitchen", imageName: "kitchen_img.png", isPopular: true },
   {
     id: "electrical_lights",

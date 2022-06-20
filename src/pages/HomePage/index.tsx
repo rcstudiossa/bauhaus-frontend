@@ -33,7 +33,7 @@ const HomePage: FC = () => {
         <TitleRow seeAll>Hot Categories</TitleRow>
         <CategoryCardsList />
         <TitleRow>Top picks for you, Seyit!</TitleRow>
-        <ProductCardsList />
+        <ProductCardsList arrangement="grid" />
       </HomeContent>
     </Container>
   );

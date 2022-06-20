@@ -1,11 +1,12 @@
 import React, { FC, ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 
 import stitches from "../../stitches";
 import categories from "../../resources/categories";
 
 const { styled } = stitches;
 
-const CategoryCardsContainer: FC<{ children: ReactNode }> = styled("div", {
+const CategoryCardsContainer: FC<{ children: ReactNode; onClick: any }> = styled("div", {
   flex: 1,
   display: "flex",
   margin: "0 -1.77rem",
@@ -58,8 +59,12 @@ const CategoryCard: FC<{ image: HTMLImageElement; children: ReactNode }> = (prop
 );
 
 const CategoryCardsList: FC = () => {
+  const navigate = useNavigate();
+  const goToProducts = () => {
+    navigate("products");
+  };
   return (
-    <CategoryCardsContainer>
+    <CategoryCardsContainer onClick={goToProducts}>
       {categories.map((category) => {
         if (category.isPopular) {
           return (
